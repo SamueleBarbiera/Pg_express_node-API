@@ -1,0 +1,27 @@
+version: '3.8'
+
+services: 
+  db: 
+    image: "postgres:14"
+    ports:
+      - "5432:5432"
+    environment: 
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=todos
+  node:
+    image: node:latest
+    command: node index.js
+    ports:
+      - "3000:3000"
+    links:
+      - db
+    working_dir: /src
+    environment:
+      SEQ_DB: todos
+      SEQ_USER: postgres
+      SEQ_PW: postgres
+      PORT: 3000
+      DATABASE_URL: postgres://username:postgres@db:5432/todos
+    volumes:
+      - ./:/src
