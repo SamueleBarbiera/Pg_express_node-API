@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "rm -rf dist && ttsc && cp -R ./src/db/migrations ./dist/db",
+    "build": "rm -rf dist && ttsc && cp -R ./src ./dist/db",
     "dev": "NODE_PATH=src nodemon --watch src -e ts --exec ts-node -r dotenv/config src/index.ts",
     "start": "node dist/index.js"
   },

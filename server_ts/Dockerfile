@@ -8,7 +8,8 @@ RUN yarn install
 
 RUN yarn build
 
-ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.8.0/wait /wait
+# avvia l'app ma aspetta che il container db si collega e parti (non solo node)
+ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.8.0/wait /wait 
 RUN chmod +x /wait
 
 EXPOSE 3001

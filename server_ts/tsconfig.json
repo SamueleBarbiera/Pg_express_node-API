@@ -13,6 +13,7 @@
     "resolveJsonModule": true,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
+    "useUnknownInCatchVariables": false,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
