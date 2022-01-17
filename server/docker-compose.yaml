@@ -1,5 +1,4 @@
 version: '3.8'
-
 services: 
   db: 
     image: "postgres:14"
@@ -11,7 +10,7 @@ services:
       - PG_DB=todo
   node:
     image: node:latest
-    command: node index.js
+    command: bash -c "node index.js && npm install"
     ports:
       - "3001:3001"
     links:
