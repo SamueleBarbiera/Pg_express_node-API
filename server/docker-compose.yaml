@@ -6,22 +6,21 @@ services:
     ports:
       - "5432:5432"
     environment: 
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=todos
+      - PG_USER=postgres
+      - PG_PW=postgres
+      - PG_DB=todo
   node:
     image: node:latest
     command: node index.js
     ports:
-      - "3000:3000"
+      - "3001:3001"
     links:
       - db
     working_dir: /src
     environment:
-      SEQ_DB: todos
-      SEQ_USER: postgres
-      SEQ_PW: postgres
-      PORT: 3000
-      DATABASE_URL: postgres://username:postgres@db:5432/todos
+      PG_DB: todo
+      PG_USER: postgres
+      PG_PW: postgres
+      DATABASE_URL: postgres://username:postgres@db:5432/todo
     volumes:
       - ./:/src

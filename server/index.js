@@ -80,6 +80,6 @@ app.delete("/todos/:id", async (req, res) => {
 })
 
 //APP LISTENING START
-app.listen(3000, () => {
-    console.log("listening on port 3000")
+app.listen(3001, () => {
+    console.log("listening on port 3001")
 })
